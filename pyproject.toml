@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "flaskfrontend"
+version = "0.1.0"
+description = "A Flask application designed as a front end to access and showcase hotel records."
+authors = ["Vladyslav Zelenyi <vladyslavzelenyi@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+flask = {version = "^3.0.0", extras = ["async"]}
+python-decouple = "^3.8"
+httpx = "^0.25.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

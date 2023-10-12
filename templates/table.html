@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Records
+{% endblock %}
+
+{% block content %}
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Country</th>
+      <th scope="col">City</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% set loop_counter = namespace(counter=1) %}
+    {% for hotel in hotels %}
+      <tr>
+        <th scope="row">{{ loop_counter.counter }}</th>
+        <td>{{ hotel.name }}</td>
+        <td>{{ hotel.country }}</td>
+        <td>{{ hotel.city }}</td>
+      </tr>
+      {% set loop_counter.counter = loop_counter.counter + 1 %}
+    {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
+
+{% block pagination %}
+  {% include "pagination.html" %}
+{% endblock %}
+
+{% block input %}
+  <form method="POST">
+    <div class="container">
+      <div class="row">
+        <div class="input-group mb-3 col col-auto">
+          <input type="number" class="form-control" placeholder="Table rows limit"
+                 aria-label="Table rows limit" aria-describedby="basic-addon2" min="1"
+                 name="limit">
+          <button type="submit" class="btn btn-outline-primary" id="basic-addon2">Change</button>
+        </div>
+      </div>
+    </div>
+  </form>
+{% endblock %}

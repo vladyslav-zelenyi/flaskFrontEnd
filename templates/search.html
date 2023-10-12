@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}
+  Search
+{% endblock %}
+
+{% block content %}
+  <form method="POST">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="input-group mb-3 col col-auto">
+          <input type="text" class="form-control" placeholder="Enter search word"
+                 aria-label="Search word" aria-describedby="basic-addon2" minlength="3"
+                 name="search_word" autocomplete="off" pattern="^\S(.*\S)?$"
+                 required>
+          <button type="submit" class="btn btn-outline-primary" id="basic-addon2">Search</button>
+        </div>
+      </div>
+    </div>
+  </form>
+{% endblock %}
